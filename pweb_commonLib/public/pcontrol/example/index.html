@@ -1,0 +1,152 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>控件库Demo</title>
+    <script type="text/javascript" src="http://192.168.100.196:9000/Scripts/lib/jquery-2.0.0.min.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/lib/vue-2.2.0.min.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/tool/pconst.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/Date.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/jQueryDom.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/String.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/Math.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/tool/ptool.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/pcontrol/flatBlueSeries_src_2.0.js"></script>
+
+    <link rel="stylesheet" href="http://192.168.100.196:9000/pcontrol/css/flatBlueSeries_min_2.0.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+
+
+    <style type="text/css">
+  
+    </style>
+    <script type="text/javascript">
+        var logger = {
+            init: function () {
+                new Vue({
+                    el: '#app',
+                    data: datamodal
+                })
+            }
+        }
+
+        var datamodal = {
+            controlTypes: [
+                {
+                    name: '基础控件',
+                    config: [{
+                        name: '按钮',
+                        href: 'button'
+                        , start: true
+                    }, {
+                        name: '开关',
+                        href: 'switch'
+                        , start: false
+                    }
+                    , {
+                        name: '文本框'
+                        , href: 'text'
+                        , start: false
+                    }, {
+                        name: '通知'
+                        , href: 'notice'
+                        , start: false
+                    }, {
+                        name: '加载'
+                        , href: 'loading'
+                        , start: false
+                    }, {
+                        name: '下拉框'
+                        , href: 'combobox'
+                        , start: false
+                    }, {
+                        name: 'tab'
+                         , href: 'tab'
+                        , start: false
+                    }, {
+                        name: '模态层'
+                         , href: 'window'
+                          , start: false
+                    }, {
+                        name: '分页'
+                        , href: 'page'
+                         , start: false
+                    }, {
+                        name: '搜索'
+                         , href: 'search'
+                        , start: false
+                    }, {
+                        name: '滚动条'
+                        , href: 'scroll'
+                          , start: false
+                    }, {
+                        name: '上传'
+                        , href: 'upload'
+                          , start: false
+                    }, {
+                        name: '树'
+                        , href: 'tree'
+                          , start: false
+                    }, {
+                        name: '时间'
+                         , href: 'time'
+                         , start: false
+                    }
+                    , {
+                        name: '登陆'
+                         , href: 'login'
+                             , start: false
+                    }, {
+                        name: '表格'
+                         , href: 'grid'
+                            , start: false
+                    }, {
+                        name: '框架'
+                         , href: 'frame'
+                            , start: false
+                    }]
+                }
+            ]
+
+
+        }
+        $(function () {
+            logger.init();
+
+
+            $("#navList li ").on("click", function () {
+                var index = $(this).index();
+                $(this).addClass("cur").siblings().removeClass("cur");
+                $(".Ui_content >div").eq(index).show().siblings().hide();
+                document.getElementById('iframeControl').src = './' + this.getAttribute('href') + '.html';
+            });
+
+            $("#navList").find("li").eq(0).click();
+
+        })
+    </script>
+</head>
+<body>
+    <div class="wrap" id="app">
+        <header id="header">
+            <h2>MEOS UI Kit</h2>
+            <span>Visual assets guidelines of MEOS by PUD</span>
+            <a class="companylogo"></a>
+        </header>
+        <section class="content">
+            <nav id="navList">
+                <div class="navListBox show" v-for="controltype in controlTypes">
+                    <h3>{{controltype.name}}<span></span></h3>
+                    <ul class="navList" style="display: block;">
+                        <li v-for="config in controltype.config" :href="config.href" :class="{'cur':config.start}">{{config.name}}</li>
+                    </ul>
+                </div>
+            </nav>
+            <div id="rightBox">
+                               <iframe style="width: 100%; height: 100%; padding: 0px; box-sizing: border-box; background: #fff; border: 0;" id="iframeControl"></iframe>
+
+            </div>
+        </section>
+    </div>
+</body>
+</html>

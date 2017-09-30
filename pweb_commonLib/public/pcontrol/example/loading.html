@@ -1,0 +1,42 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>加载</title>
+    <script type="text/javascript" src="http://192.168.100.196:9000/Scripts/lib/jquery-2.0.0.min.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/lib/vue-2.2.0.min.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/tool/pconst.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/Date.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/jQueryDom.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/String.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/Math.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/tool/ptool.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/pcontrol/flatBlueSeries_src_2.0.js"></script>
+
+    <link rel="stylesheet" href="http://192.168.100.196:9000/pcontrol/css/flatBlueSeries_min_2.0.css" />
+
+
+    <style type="text/css">
+  
+    </style>
+    <script type="text/javascript">
+        function gloadLoading() {
+            $("#gloadLoadng").pshow();
+        }
+        function partLoading() {
+            $("#partLoading").pshow();
+        }
+    </script>
+</head>
+<body>
+    <div style="">
+        <pbutton-white text="全局加载" click="gloadLoading"></pbutton-white>
+        <pbutton-white text="局部加载" click="partLoading"></pbutton-white>
+        <!-- 全局加载 -->
+        <ploading-global id="gloadLoadng" ></ploading-global>
+        <!-- 局部加载 -->
+        <ploading-part id="partLoading" text="拼命加载中..."></ploading-part>
+
+    </div>
+</body>
+</html>

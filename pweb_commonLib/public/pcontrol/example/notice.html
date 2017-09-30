@@ -1,0 +1,43 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>提示</title>
+    <script type="text/javascript" src="http://192.168.100.196:9000/Scripts/lib/jquery-2.0.0.min.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/lib/vue-2.2.0.min.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/tool/pconst.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/Date.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/jQueryDom.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/String.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/Math.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/tool/ptool.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/pcontrol/flatBlueSeries_src_2.0.js"></script>
+
+    <link rel="stylesheet" href="http://192.168.100.196:9000/pcontrol/css/flatBlueSeries_min_2.0.css" />
+
+
+    <style type="text/css">
+  
+    </style>
+    <script type="text/javascript">
+        function eventYes() {
+            $("#message").pshow({ text: "添加成功！", state: "success" })
+        }
+        function eventNO() {
+            $("#message").pshow({ text: "添加失败！", state: "failure" })
+        }
+
+    </script>
+</head>
+<body>
+    <div style="">
+        <pbutton-white text="操作成功" click="eventYes"></pbutton-white>
+        <pbutton-white text="操作失败" click="eventNO"></pbutton-white>
+        <!-- 成功失败提示 -->
+        <pnotice-message id="message"></pnotice-message>
+
+        <!--  暂无数据 -->
+        <pnotice-nodata  text="暂无数据" subtitle="请检查网络"></pnotice-nodata>
+    </div>
+</body>
+</html>

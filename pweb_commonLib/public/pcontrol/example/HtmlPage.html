@@ -1,0 +1,314 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/lib/jquery-2.0.0.min.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/lib/vue-2.2.0.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/tool/pconst.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/Date.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/jQueryDom.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/String.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/Math.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/tool/ptool.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/pcontrol/flatBlueSeries_src_2.0.js"></script>
+    <!--<script type="text/javascript" src="vue2.3.3.js"></script>-->
+    <!--<script type="text/javascript" src="vue-1.0.24.debug.js"></script>-->
+
+    <link rel="stylesheet" href="http://192.168.100.196:9000/pcontrol/css/flatBlueSeries_min_2.0.css" />
+    <script type="text/javascript">
+        var menuItems = [{
+            id: 1, name: '唐朝', king: '李世民', time: '1770', level: 1, kings: [{
+                id: 1, name: '高祖', king: '李世民', time: '1770', level: 2
+            }, {
+                id: 1, name: '太宗', level: 2, king: '李世民', time: '1770'
+            }, {
+                id: 1, name: '高宗', level: 2, king: '李世民', time: '1770', kings: [{
+                    id: 1, name: '东皇', level: 3, king: '李世民', time: '1770'
+                }, {
+                    id: 1, name: '原始', level: 3, king: '李世民', time: '1770'
+                }, {
+                    id: 1, name: '太乙', issel: true, level: 3, king: '李世民', time: '1770'
+                }]
+            }, {
+                id: 1, name: '唐义宗', level: 2, king: '李世民', time: '1770'
+            }, {
+                id: 1, name: '唐中宗', level: 2, king: '李世民', time: '1770'
+            }, {
+                id: 1, name: '唐睿宗', level: 2, king: '李世民', time: '1770'
+            }, {
+                id: 1, name: '唐玄宗', level: 2, king: '李世民', time: '1770'
+            }, {
+                id: 1, name: '唐肃宗', level: 2, king: '李世民', time: '1770'
+            }, {
+                id: 1, name: '唐代宗', level: 2, king: '李世民', time: '1770'
+            }, {
+                id: 1, name: '唐德宗', level: 2, king: '李世民', time: '1770'
+            }, {
+                id: 1, name: '唐顺宗', level: 2, king: '李世民', time: '1770'
+            }]
+        }, {
+            id: 2, name: '宋朝', level: 1, king: '李世民', time: '1770'
+        }, {
+            id: 3, name: '元朝', issel: true, level: 1, king: '李世民', time: '1770'
+        }, {
+            id: 4, name: '明朝', level: 1, king: '李世民', time: '1770'
+        }, {
+            id: 5, name: '清朝', level: 1, king: '李世民', time: '1770'
+        }, {
+            id: 5, name: '秦', level: 1, king: '李世民', time: '1770'
+        }, {
+            id: 5, name: '汉', level: 1, king: '李世民', time: '1770'
+        }, {
+            id: 5, name: '三国', level: 1, king: '李世民', time: '1770'
+        }, {
+            id: 5, name: '两晋', level: 1, king: '李世民', time: '1770'
+        }];
+        //menumain menuminor
+        function scrollCall(event) {
+        };
+    </script>
+</head>
+<body style="height: 900px;">
+    <div id="div1" style="width: 10000px; height: 10000px;">
+        <!--<pswitch-radio text="强电" name="aaa"></pswitch-radio>-->
+        <!--<pcombobox-custom sel="_console" id="'combobox1'" isborder="false" orientation="down" istree="true" bind="false" templateid="divTtt">
+            <header placeholder="请选择朝代" prefix="朝代："></header>
+            <item datasource="menuItems" text="name" child="kings" pronametoissel="issel"></item>
+        </pcombobox-custom>-->
+        <!--<ptab-text id="'tab1'" templateid="sct222" datasource="menuItems" text="name" sel="_console" beforesel="_console2" bind="true"></ptab-text>-->
+        <!--<ptab-navigation id="'tab1'" templateid="sct222" datasource="menuItems" text="name" sel="_console" beforesel="_console2" bind="true"></ptab-navigation>-->
+        <!--<pcombobox-normal sel="_console" id="'combobox1'" isborder="true" orientation="down" istree="false" bind="false">
+            <header placeholder="请选择朝代" prefix="朝代：" click="_console"></header>
+            <item datasource="menuItems" text="name" child="kings" pronametoissel="issel"></item>
+        </pcombobox-normal>-->
+        <!--<pcombobox-normal sel="_console" id="'combobox1'" isborder="false" orientation="down">
+            <header placeholder="请选择朝代" prefix="朝代：" click="_console"></header>
+            <item datasource="menuItems" text="name" pronametoissel="issel"></item>
+        </pcombobox-normal>-->
+        <!--<pscroll-small templateid="divTtt" style="min-width: 300px; max-height: 500px;"></pscroll-small>-->
+        <!--<pscroll-small templateid="sct222" style="max-width: 300px; max-height: 500px;"></pscroll-small>-->
+        <!--<pbutton-menuminor sel="_console" id="'combobox1'"  orientation="down" bind="false">
+            <header placeholder="朝代操作" prefix="朝代："></header>
+            <item datasource="menuItems" text="name" pronametoissel="issel"></item>
+        </pbutton-menuminor>-->
+        <!--<pbutton-menumain sel="_console" id="'combobox1'"  orientation="down" bind="false">
+            <header placeholder="朝代操作" prefix="朝代：" click="_console"></header>
+            <item datasource="menuItems" text="name" pronametoissel="issel"></item>
+        </pbutton-menumain>-->
+        <!--<ptext-textarea placeholder="激动啊" text="kWh" align="left">
+            <verify length="10" verifytype="email" errtip="邮箱不对"></verify>
+        </ptext-textarea>-->
+        <!--<ptext-text placeholder="激动啊" text="kWh" align="left">
+            <verify length="10" verifytype="email" errtip="邮箱不对"></verify>
+        </ptext-text>-->
+        <!--<ptext-text placeholder="激动啊" align="left">
+            <verify length="10" verifytype="email" errtip="邮箱不对"></verify>
+        </ptext-text>-->
+        <!--<ptext-combobox sel="_console" id="'combobox1'"  orientation="down" bind="false">
+            <header placeholder="'请选择朝代'" prefix="'朝代：'"></header>
+            <item datasource="menuItems" text="name" pronametoissel="issel"></item>
+            <verify length="10" verifytype="email" errtip="'邮箱不对'"></verify>
+        </ptext-combobox>-->
+        <!--<pwindow-global id="aaa2" templateid="divTtt"></pwindow-global>-->
+        <!--<pwindow-modal id="aaa2" templateid="sct222" title="我是模态弹窗">
+        </pwindow-modal>-->
+        <!--<pwindow-confirm id="aaa2" templateid="sct222" title="我是二次确认弹窗" subtitle="确认吗？">
+            <button>
+                <pbutton-backred text="me"></pbutton-backred>
+            </button>
+        </pwindow-confirm>-->
+        <!--<pwindow-float id="aaa2" templateid="sct222" title="我是侧弹窗">
+            <button>
+                <pbutton-borderred isborder="false" icon="e" text="me"></pbutton-borderred>
+            </button>
+            <animate orientation="left" maxpx="500" minpx="-500"></animate>
+        </pwindow-float>-->
+        <!--<pwindow-bubble id="aaa2" templateid="sct222" title="我是气泡">
+            <button>
+                <pbutton-borderred isborder="false" icon="e" text="me"></pbutton-borderred>
+            </button>
+        </pwindow-bubble>-->
+        <!--<ppage-simple number="10" style="margin-top:5px;" sel="_console2" id="page1"></ppage-simple>-->
+        <!--<ppage-full number="10" style="margin-top:20px;" sel="_console2" id="page2"></ppage-full>-->
+        <!--<psearch-delay id="delay1" style="margin-top: 10px;" change="_console2">
+            <tip suggestsource="menuItems" suggesttext="name" advisesource="emperors" advisetext="name"></tip>
+            <combobox>
+                <pcombobox-normal sel="_console" id="'combobox1'" isborder="false" orientation="down">
+                    <header placeholder="请选择朝代" prefix="朝代："></header>
+                    <item datasource="menuItems" text="name" pronametoissel="issel"></item>
+                </pcombobox-normal>
+            </combobox>
+        </psearch-delay>-->
+        <!--<psearch-promptly id="promptly1" style="margin-top: 20px;" change="_console2">
+            <tip suggestsource="menuItems" suggesttext="name" advisesource="emperors" advisetext="name"></tip>
+            <combobox>
+                <pcombobox-normal sel="_console" id="Pcombobox-normal1" isborder="false" orientation="down">
+                    <header placeholder="请选择朝代" prefix="朝代："></header>
+                    <item datasource="menuItems" text="name" pronametoissel="issel"></item>
+                </pcombobox-normal>
+            </combobox>
+        </psearch-promptly>-->
+        <!--<pupload-img id="upload1" number="2" style="margin-top:5px;"></pupload-img>-->
+        <!--<pupload-attachment id="upload2" number="3" style="margin-top:25px;"></pupload-attachment>-->
+        <!--<pupload-attachment id="upload3" style="margin-top:25px;"></pupload-attachment>-->
+        <!--<ptree-normal bind="true" datasource="menuItems" style="height:400px;" sel="_console" number="2">
+            <item itemid="id" text="name" child="kings"></item>
+        </ptree-normal>-->
+        <!--<ptree-normal bind="true" datasource="menuItems" style="height:400px;" sel="_console" number="1">
+            <item itemid="id" text="name" child="kings" issearch="false"></item>
+            <panel width="700" height="600"></panel>
+        </ptree-normal>-->
+        <!--<pcombobox-time sel="_console" isborder="false" id="dbox">
+            <header prefix="年"></header>
+            <item start="2000" end="2017"></item>
+        </pcombobox-time>-->
+        <!--<ptime-calendar id="calendar1" sel="_console2"></ptime-calendar>-->
+        <!--<ptime-form id="calendar2" sel="_console2">
+            <item start="2000" end="2017" zonetype="yMdhm"></item>
+        </ptime-form>-->
+        <div style="width: 600px; height: 300px;">
+            <!--<pgrid-normal id="'grid1'">
+                <panel datasource="menuItems" lock="true" pagesize="10" sel="_console2" click="_console"></panel>
+                <header>
+                    <column name="朝代名称" source="name" click="_console"></column>
+                    <column name="国王" source="king" click="_console"></column>
+                    <column name="年代" source="time"></column>
+                </header>
+                <page>
+                    <ppage-simple number="10"></ppage-simple>
+                    <ppage-full number="10"></ppage-full>
+                </page>
+
+            </pgrid-normal>-->
+            <!--<pswitch-checkbox></pswitch-checkbox>-->
+            <!--<pgrid-multifunction id="'grid2'">
+                <panel datasource="menuItems" pagesize="10" sel="_console2" checkbox="true" click="_console" change="_console"></panel>
+                <header>
+                    <column name="朝代名称" source="name" click="_console" sort="true" sortevent="_console2"></column>
+                    <column name="国王" source="king"></column>
+                    <column name="年代" source="time"></column>
+                </header>
+                <page>
+                    <ppage-simple number="10"></ppage-simple>
+                </page>
+                <button>
+                    <pbutton-blue text="点我啊" click="_console2"></pbutton-blue>
+                </button>
+            </pgrid-multifunction>-->
+        </div>
+    </div>
+    <!-- uname="sagaadmin" uhead="" ticket=""-->
+    <pframe-normal>
+        <header title="Sass平台" subtitle=""></header>
+        <item datasource="_pframeSource" mainurl="/modulemanage"></item>
+        <user defaulthead="" menusource="" menutext=""></user>
+    </pframe-normal>
+    <script type="text/html" id="sct222">
+    </script>
+    <script type="text/html" id="divTtt">
+    </script>
+</body>
+</html>
+
+
+<script type="text/javascript">
+    Vue.component('vuetagbfaddbfeajbgdhbbjhb', {
+        template: '#bfaddbfeajbgdhbbjhb',
+        props: {
+            model: Object
+        },
+        methods: {}
+    });
+    function changefn(model, event) {
+        console.log('----------------changefn-------------');
+        console.log(model);
+        console.log(event);
+    };
+    function beforechangefn(model, event) {
+        console.log('----------------beforechangefn-------------');
+        console.log(model.pEventAttr ? model.pEventAttr.state : event.pEventAttr.state);
+        console.log(model);
+        console.log(event);
+        return true;
+    };
+    function clickfn(model, event) {
+        console.log('----------------clickfn-------------');
+        console.log(model);
+        console.log(event);
+    };
+    var ppp = '--';
+    var emperors = [{
+        id: 1, name: '尧'
+    }, {
+        id: 1, name: '舜'
+    }, {
+        id: 1, name: '禹'
+    }, {
+        id: 1, name: '伏羲'
+    }, {
+        id: 1, name: '女娲'
+    }, {
+        id: 1, name: '神农氏'
+    }, {
+        id: 1, name: '轩辕'
+    }, {
+        id: 1, name: '蚩尤'
+    }, {
+        id: 1, name: '皇帝'
+    }, {
+        id: 1, name: '炎帝'
+    }, {
+        id: 1, name: '燧人'
+    }, {
+        id: 1, name: '祝融'
+    }, {
+        id: 1, name: '金乌'
+    }, {
+        id: 1, name: '后羿'
+    }];
+    var modal = {
+        students: [{
+            name: 'jack2011/01/01', age: 12
+        }, {
+            name: 'Tom', age: 13
+        }],
+        menuItems: menuItems,
+        grades: [{
+            no: '三年一班'
+        }, {
+            no: '三年二班'
+        }],
+        emperors: emperors,
+        pageIndex: 1,
+        methods: {},
+        others: []
+    };
+    for (var i = 1; i < 60; i++) {
+        modal.others.push({ name: '我是' + i });
+    }
+    function ck() {
+        alert(11);
+    };
+    $(function () {
+        //document.body.addEventListener('DOMNodeInserted', function (event) {
+        //    console.log(event);
+        //});
+
+        var vue1 = new Vue({
+            el: '#div1',
+            data: modal
+        });
+    });
+
+    function _console(model, event) {
+        console.log(model);
+        console.log(event.pEventAttr);
+    };
+
+    function _console2(event) {
+        console.log(event.pEventAttr);
+        return true;
+    };
+
+</script>

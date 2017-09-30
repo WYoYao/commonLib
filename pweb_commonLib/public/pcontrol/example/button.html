@@ -1,0 +1,85 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>按钮</title>
+    <script type="text/javascript" src="http://192.168.100.196:9000/Scripts/lib/jquery-2.0.0.min.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/lib/vue-2.2.0.min.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/tool/pconst.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/Date.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/jQueryDom.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/String.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/Math.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/tool/ptool.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/pcontrol/flatBlueSeries_src_2.0.js"></script>
+
+    <link rel="stylesheet" href="http://192.168.100.196:9000/pcontrol/css/flatBlueSeries_min_2.0.css" />
+
+
+    <style type="text/css">
+  
+    </style>
+    <script type="text/javascript">
+        var buttonArr = [{ name: '1号' }, { name: '2号' }, { name: '3号' }, { name: '4号' }, { name: '5号' }, { name: '6号' }, { name: '7号' }, { name: '8号' }, { name: '9号' }];
+        function itemClick(obj) {
+            var index = obj.pEventAttr.index;
+            console.log(index)
+        }
+        function buttonClick() {
+            console.log('我是一个按钮事件')
+            $("#comboboxItem").psel(2)
+        }
+    </script>
+</head>
+<body>
+    <div style="padding: 20px; width: 300px">
+        按钮
+        <br />
+        <pbutton-white text="选中第3项" icon="e" click="buttonClick"></pbutton-white>
+        <pbutton-white text="我是按钮"></pbutton-white>
+        <pbutton-white icon="e" shape="rectangle"></pbutton-white>
+        <pbutton-white icon="J" shape="ellipse"></pbutton-white>
+
+        <pbutton-blue text="编辑" icon="e"   isborder="false" id="ss"></pbutton-blue>
+       <pbutton-blue text="取消" icon="e"  isborder="false"  id="ds"></pbutton-blue>
+        <br />
+        <br />
+
+        <pbutton-blue text="我是按钮" icon="e"></pbutton-blue>
+        <pbutton-blue text="我是按钮"></pbutton-blue>
+        <pbutton-blue icon="e" shape="rectangle"></pbutton-blue>
+        <pbutton-blue icon="e" shape="ellipse"></pbutton-blue>
+        <br />
+        <br />
+        <pbutton-borderred text="我是按钮" icon="e"></pbutton-borderred>
+        <pbutton-borderred text="我是按钮"></pbutton-borderred>
+        <pbutton-borderred icon="e" shape="rectangle"></pbutton-borderred>
+        <pbutton-borderred icon="e" shape="ellipse"></pbutton-borderred>
+        <br />
+        <br />
+        <pbutton-backred text="我是按钮" icon="e"></pbutton-backred>
+        <pbutton-backred text="我是按钮"></pbutton-backred>
+        <pbutton-backred icon="e" shape="rectangle"></pbutton-backred>
+        <pbutton-backred icon="e" shape="ellipse"></pbutton-backred>
+        <br />
+        <br />
+        <pbutton-menumain sel="itemClick">
+            <header  placeholder="头部提示文本"></header>
+            <item datasource="buttonArr" text="name"></item>
+
+        </pbutton-menumain>
+        <br />
+        <br />
+        <!--orientation="up"  方向-->
+        <pbutton-menuminor  sel="itemClick" id="comboboxItem">
+            <header  placeholder="头部提示文本"></header>
+            <item datasource="buttonArr" text="name"></item>
+        </pbutton-menuminor>
+
+        <br />
+        <br />
+    </div>
+
+
+</body>
+</html>

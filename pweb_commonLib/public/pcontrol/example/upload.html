@@ -1,0 +1,62 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>upload</title>
+    <script type="text/javascript" src="http://192.168.100.196:9000/Scripts/lib/jquery-2.0.0.min.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/lib/vue-2.2.0.min.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/tool/pconst.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/Date.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/jQueryDom.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/String.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/Math.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/tool/ptool.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/tool/pajax.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/pcontrol/flatBlueSeries_src_2.0.js"></script>
+    <link rel="stylesheet" href="http://192.168.100.196:9000/pcontrol/css/flatBlueSeries_min_2.0.css" />
+
+
+    <style type="text/css">
+  
+    </style>
+    <script type="text/javascript">
+
+        var buttonArr = [{ name: '1号' }, { name: '2号' }, { name: '3号' }, { name: '4号' }, { name: '5号' }, { name: '6号' }, { name: '7号' }, { name: '8号' }, { name: '9号' }];
+        function itemClick(obj) {
+            var index = obj.pEventAttr.index;
+            console.log(index)
+        }
+        function xxx() {
+            var x = $("#xx").pval();
+            alert(x);
+        }
+        var imgArr = [{ name: '1.25.jpg', url: '/_tempfile/506420efacaa2e3a1c30b12d30096ad8' }, { name: '34.jpg', url: '/_tempfile/506420efacaa2e3a1c30b12d30096ad8' }]
+
+    </script>
+</head>
+<body>
+    <div style="width: 400px; padding: 30px; height: 600px;">
+        上传多个文件
+        <pupload-attachment number="5" id="ddd"></pupload-attachment>
+        <br />
+        <br />
+        上传单个文件
+        <pupload-attachment id="aaa"></pupload-attachment>
+        <br />
+        <br />
+        上传一张图片
+
+        <pupload-img id="cc"></pupload-img>
+        <br />
+        <br />
+        上传多张图片
+         <pupload-img number="5" arrange="vertical" id="xx">
+         </pupload-img>
+
+
+
+                    <pbutton-white text="我是按钮" click="xxx"></pbutton-white>
+
+    </div>
+</body>
+</html>

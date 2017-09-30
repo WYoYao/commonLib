@@ -1,0 +1,133 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>tree</title>
+    <script type="text/javascript" src="http://192.168.100.196:9000/Scripts/lib/jquery-2.0.0.min.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/lib/vue-2.2.0.min.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/tool/pconst.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/Date.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/jQueryDom.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/String.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/Math.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/tool/ptool.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/tool/pajax.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/pcontrol/flatBlueSeries_src_2.0.js"></script>
+    <link rel="stylesheet" href="http://192.168.100.196:9000/pcontrol/css/flatBlueSeries_min_2.0.css" />
+
+
+    <style type="text/css">
+        .red {
+        color:red;}
+    </style>
+    <script type="text/javascript">
+        var buttonArr = [{ name: '1号' }, { name: '2号' }, { name: '3号' }, { name: '4号' }, { name: '5号' }, { name: '6号' }, { name: '7号' }, { name: '8号' }, { name: '9号' }];
+        function itemClick(obj,event) {
+            var index = event.pEventAttr;
+            console.log(index)
+        }
+
+        var logger = {
+            init: function () {
+                new Vue({
+                    el: '#app',
+                    data: datamodal
+                })
+            }
+        }
+      
+        var datamodal = {
+            xxx: 'test',
+            start: true,
+            treeData: [
+            {
+                name: "建筑名称1",
+                id: "1",
+                child: [
+                    {
+                        name: "1层",
+                        id: "1-1",
+                        child: []
+                    }, {
+                        name: "2层",
+                        id: "1-2",
+                        child: [
+                            {
+                                name: "空间名称1",
+                                id: "1-2-1",
+                                child: []
+                            }, {
+                                name: "空间名称2",
+                                id: "1-2-2",
+                                child: []
+                            }
+                        ]
+                    },
+                ]
+            },
+            {
+                name: "建筑名称2",
+                id: "2",
+                child: [
+                    {
+                        name: "1层",
+                        id: "1-1",
+                        child: []
+                    }, {
+                        name: "2层",
+                        id: "1-2",
+                        child: [
+                            {
+                                name: "空间名称1",
+                                id: "1-2-1",
+                                child: []
+                            }, {
+                                name: "空间名称2",
+                                id: "1-2-2",
+                                child: []
+                            }
+                        ]
+                    },
+                ]
+            },
+            ]
+        }
+        $(function () {
+            logger.init();
+        });
+    </script>
+</head>
+<body>
+    <div id="app">
+<!--        <div v-bind:class="{'red':start}">这是测试专用</div>
+
+        <pswitch-checkbox text="" state="start" bind="true"></pswitch-checkbox>
+-->
+                <!--<pswitch-checkbox text="我是复选" state="true"></pswitch-checkbox>-->
+
+<!--        <span>{{xxx}}</span>-->
+        <div style="width: 300px;  height: 400px; float: left;margin:30px;" id="divtree1">
+            <ptree-normal bind="true" datasource="treeData" sel="itemClick" number="1"> 
+            <item itemid="id" text="name" child="child" issearch="true"></item> 
+            <panel width="400" height="600"></panel> 
+        </ptree-normal>
+        </div>
+        <div style="width: 300px;  height: 400px; float: left;margin:30px;">
+            <ptree-normal bind="true" datasource="treeData" sel="itemClick" number="1"> 
+            <item itemid="id" text="name" child="child" issearch="false"></item> 
+            </ptree-normal>
+        </div>
+        <div style="width: 300px;  height: 400px; float: left;margin:30px;">
+            <ptree-normal bind="true" datasource="treeData" sel="itemClick" number="2"> 
+            <item itemid="id" text="name" child="child" issearch="true"></item> 
+            <panel width="400" height="600"></panel> 
+        </ptree-normal>
+        </div>
+        <div style="width: 300px;  height: 400px; float: left;margin:30px;">
+            <ptree-normal bind="true" datasource="treeData" sel="itemClick" number="2"> 
+            <item itemid="id" text="name" child="child" issearch="false"></item> 
+            </ptree-normal>
+        </div>
+  </div>
+</body>
+</html>

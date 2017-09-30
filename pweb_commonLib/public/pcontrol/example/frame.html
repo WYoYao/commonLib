@@ -1,0 +1,112 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>框架</title>
+    <script type="text/javascript" src="http://192.168.100.196:9000/Scripts/lib/jquery-2.0.0.min.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/lib/vue-2.2.0.min.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/tool/pconst.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/Date.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/jQueryDom.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/String.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/Math.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/tool/ptool.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/pcontrol/flatBlueSeries_src_2.0.js"></script>
+
+    <link rel="stylesheet" href="http://192.168.100.196:9000/pcontrol/css/flatBlueSeries_min_2.0.css" />
+
+
+    <style type="text/css">
+  
+    </style>
+    <script type="text/javascript">
+        var logger = {
+            init: function () {
+                new Vue({
+                    el: '#app',
+                    data: datamodal
+                })
+            }
+        }
+        function itemClick(obj) {
+            var index = obj.pEventAttr.index;
+            console.log(index)
+        }
+        var datamodal = {
+            userName: 'test',
+            gridArr: [{ name: '小王1', age: '18', hobby: '唱歌' }],
+            menuItems: [{
+                id: 1, name: '唐朝', king: '李世民', time: '1770', level: 1, kings: [{
+                    id: 1, name: '高祖', king: '李世民', time: '1770', level: 2
+                }, {
+                    id: 1, name: '太宗', level: 2, king: '李世民', time: '1770'
+                }, {
+                    id: 1, name: '高宗', level: 2, king: '李世民', time: '1770', kings: [{
+                        id: 1, name: '东皇', level: 3, king: '李世民', time: '1770'
+                    }, {
+                        id: 1, name: '原始', level: 3, king: '李世民', time: '1770'
+                    }, {
+                        id: 1, name: '太乙', issel: true, level: 3, king: '李世民', time: '1770'
+                    }]
+                }, {
+                    id: 1, name: '唐义宗', level: 2, king: '李世民', time: '1770'
+                }, {
+                    id: 1, name: '唐中宗', level: 2, king: '李世民', time: '1770'
+                }, {
+                    id: 1, name: '唐睿宗', level: 2, king: '李世民', time: '1770'
+                }, {
+                    id: 1, name: '唐玄宗', level: 2, king: '李世民', time: '1770'
+                }, {
+                    id: 1, name: '唐肃宗', level: 2, king: '李世民', time: '1770'
+                }, {
+                    id: 1, name: '唐代宗', level: 2, king: '李世民', time: '1770'
+                }, {
+                    id: 1, name: '唐德宗', level: 2, king: '李世民', time: '1770'
+                }, {
+                    id: 1, name: '唐顺宗', level: 2, king: '李世民', time: '1770'
+                }]
+            }, {
+                id: 2, name: '宋朝', level: 1, king: '李世民', time: '1770'
+            }, {
+                id: 3, name: '元朝', issel: true, level: 1, king: '李世民', time: '1770'
+            }, {
+                id: 4, name: '明朝', level: 1, king: '李世民', time: '1770'
+            }, {
+                id: 5, name: '清朝', level: 1, king: '李世民', time: '1770'
+            }, {
+                id: 5, name: '秦', level: 1, king: '李世民', time: '1770'
+            }, {
+                id: 5, name: '汉', level: 1, king: '李世民', time: '1770'
+            }, {
+                id: 5, name: '三国', level: 1, king: '李世民', time: '1770'
+            }, {
+                id: 5, name: '两晋', level: 1, king: '李世民', time: '1770'
+            }],
+
+
+            userMenu: ['1号', '2号', '3号'],
+        }
+        $(function () {
+            logger.init();
+        })
+    </script>
+</head>
+<body>
+    <div style="height: 100%; width: 100%" id="app">
+        <pframe-normal id="'div2'" title="'sass平台'"> 
+            <user head="" name="userName"> 
+                <item datasource="userMenu" click="_console"></item> 
+            </user> 
+            <item datasource="menuItems" text="name" icon="" click="_console" child="kings" url="url"> 
+                <manage text="'系统管理'" click="_console2"></manage> 
+                <combobox> 
+                    <pcombobox-normal sel="_console" id="'combobox1'" isborder="false" orientation="down" bind="true"> 
+                        <header placeholder="请选择朝代" prefix="朝代："></header> 
+                        <item datasource="menuItems" text="name" pronametoissel="issel"></item> 
+                    </pcombobox-normal> 
+                </combobox> 
+            </item> 
+        </pframe-normal>
+    </div>
+</body>
+</html>

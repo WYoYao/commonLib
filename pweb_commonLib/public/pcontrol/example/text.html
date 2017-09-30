@@ -1,0 +1,68 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>text</title>
+    <script type="text/javascript" src="http://192.168.100.196:9000/Scripts/lib/jquery-2.0.0.min.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/lib/vue-2.2.0.min.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/tool/pconst.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/Date.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/jQueryDom.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/String.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/Math.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/tool/ptool.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/pcontrol/flatBlueSeries_src_2.0.js"></script>
+
+    <link rel="stylesheet" href="http://192.168.100.196:9000/pcontrol/css/flatBlueSeries_min_2.0.css" />
+
+
+    <style type="text/css">
+  
+    </style>
+    <script type="text/javascript">
+        var buttonArr = [{ name: '1号' }, { name: '2号' }, { name: '3号' }, { name: '4号' }, { name: '5号' }, { name: '6号' }, { name: '7号' }, { name: '8号' }, { name: '9号' }];
+        function itemClick(obj) {
+            var index = obj.pEventAttr.index;
+            alert('选中第' + index+ '条')
+        }
+        function xxx() {
+            var x = $("#xx").pverifi();
+            alert(x);
+        }
+    </script>
+</head>
+<body>
+    <div style="width: 600px; padding: 30px;" id="xx">
+       <!-- * verifytype  验证类型，需放到verify标签上，可能的值包括：space(空格)、length(最大字符数)、chinese(汉子)、email(邮箱)、idard(身份证)、negativeint(负整数)、positiveint(正整数)、int(整数)、negativenumber(负数)、positivenumber(正数)、number(数字)、tel(电话号)、mobile(手机号)<br />-->
+        文本框
+        <ptext-text placeholder="请输入SOP名称">
+            <verify errtip="不可为空"  verifytype="space"></verify>
+        </ptext-text><br /><br />
+
+         <ptext-text placeholder="请输入SOP名称" text="kWh">
+            <verify errtip="不可为空"  verifytype="space"></verify>
+        </ptext-text><br /><br /> 
+
+           <ptext-text placeholder="请输入SOP名称">
+            <verify errtip="不可为空"  verifytype="space"></verify>
+        </ptext-text><br /><br />
+        多行文本框
+        <ptext-textarea placeholder="输入说明" class="packExplain">
+                            <verify errtip="不可为空" length="10" friendlyip="" verifytype="space"></verify>
+                        </ptext-textarea><br /><br />
+
+        <ptext-combobox sel="itemClick" id="xxx">
+                        <header  placeholder="头部提示文本"></header>
+            <item datasource="buttonArr" text="name"></item>
+
+
+        </ptext-combobox>
+
+
+    </div>
+
+            <pbutton-white text="我是按钮" click="xxx"></pbutton-white>
+
+
+</body>
+</html>

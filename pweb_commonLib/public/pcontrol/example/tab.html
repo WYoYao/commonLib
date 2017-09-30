@@ -1,0 +1,38 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>tab</title>
+    <script type="text/javascript" src="http://192.168.100.196:9000/Scripts/lib/jquery-2.0.0.min.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/lib/vue-2.2.0.min.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/tool/pconst.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/Date.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/jQueryDom.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/String.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/Math.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/tool/ptool.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/pcontrol/flatBlueSeries_src_2.0.js"></script>
+
+    <link rel="stylesheet" href="http://192.168.100.196:9000/pcontrol/css/flatBlueSeries_min_2.0.css" />
+
+
+    <style type="text/css">
+  
+    </style>
+    <script type="text/javascript">
+        var dataArr = [{ name: "大盘鸡", icon: 'd' }, { name: "小盘鸡", icon: 'e' }, { name: "中盘鸡", icon: 'c' }];
+        function eventCall(obj){
+            var index = obj.pEventAttr.index;
+            console.log(index)
+        }
+    </script>
+</head>
+<body style="background:#f0f3f6">
+    <div style="width: 600px; padding:30px;    height: 600px;">
+        <ptab-button datasource="dataArr" text="name" sel="eventCall"></ptab-button><br /><br />
+        <ptab-text datasource="dataArr" text="name"></ptab-text><br /><br />
+     <ptab-navigation datasource="dataArr" text="name" icon="icon"></ptab-navigation><br /><br />
+    </div>
+    
+</body>
+</html>

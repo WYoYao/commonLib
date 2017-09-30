@@ -1,0 +1,436 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>下拉框</title>
+    <script type="text/javascript" src="http://192.168.100.196:9000/Scripts/lib/jquery-2.0.0.min.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/lib/vue-2.2.0.min.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/tool/pconst.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/Date.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/jQueryDom.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/String.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/Math.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/tool/ptool.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/pcontrol/flatBlueSeries_src_2.0.js"></script>
+    <link rel="stylesheet" href="http://192.168.100.196:9000/pcontrol/css/flatBlueSeries_min_2.0.css" />
+
+
+    <style type="text/css">
+  
+    </style>
+    <script type="text/javascript">
+        var buttonArr = [{ name: '1号', id: '1' }, { name: '2号', id: '2' }, { name: '3号', id: '3' }];
+        function itemClick(obj) {
+            var index = obj.pEventAttr.index;
+            //  alert(index);
+            console.log(index);
+        }
+
+
+
+        var workState = [{
+            name: 'leo',
+            contents: [{
+                name: 'hello',
+                contents: [{
+                    name: 'xx',
+                    issel: true
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }]
+            }, {
+                name: 'hello',
+                contents: [{
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }]
+            }, {
+                name: 'hello',
+                contents: [{
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }]
+            }, {
+                name: 'hello',
+                contents: [{
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }]
+            }, {
+                name: 'hello',
+                contents: [{
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }]
+            }]
+        }, {
+            name: 'leo',
+            contents: [{
+                name: 'hello',
+                contents: [{
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }]
+            }, {
+                name: 'hello',
+                contents: [{
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }]
+            }, {
+                name: 'hello',
+                contents: [{
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }]
+            }, {
+                name: 'hello',
+                contents: [{
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }]
+            }, {
+                name: 'hello',
+                contents: [{
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }]
+            }]
+        }, {
+            name: 'leo',
+            contents: [{
+                name: 'hello',
+                contents: [{
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }]
+            }, {
+                name: 'hello',
+                contents: [{
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }]
+            }, {
+                name: 'hello',
+                contents: [{
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }]
+            }, {
+                name: 'hello',
+                contents: [{
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }]
+            }, {
+                name: 'hello',
+                contents: [{
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }]
+            }]
+        }, {
+            name: 'leo',
+            contents: [{
+                name: 'hello',
+                contents: [{
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }]
+            }, {
+                name: 'hello',
+                contents: [{
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }]
+            }, {
+                name: 'hello',
+                contents: [{
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }]
+            }, {
+                name: 'hello',
+                contents: [{
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }]
+            }, {
+                name: 'hello',
+                contents: [{
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }]
+            }]
+        }, {
+            name: 'leo',
+            contents: [{
+                name: 'hello',
+                contents: [{
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }]
+            }, {
+                name: 'hello',
+                contents: [{
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }]
+            }, {
+                name: 'hello',
+                contents: [{
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }]
+            }, {
+                name: 'hello',
+                contents: [{
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }]
+            }, {
+                name: 'hello',
+                contents: [{
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }]
+            }]
+        }, {
+            name: 'leo',
+            contents: [{
+                name: 'hello',
+                contents: [{
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }]
+            }, {
+                name: 'hello',
+                contents: [{
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }]
+            }, {
+                name: 'hello',
+                contents: [{
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }]
+            }, {
+                name: 'hello',
+                contents: [{
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }]
+            }, {
+                name: 'hello',
+                contents: [{
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }, {
+                    name: 'world',
+                }]
+            }]
+        }]
+
+    </script>
+</head>
+<body>
+    <div style="width: 200px; padding: 30px;">
+        普通下拉
+        <pcombobox-normal sel="itemClick" id="xxx">
+            <header  placeholder="头部提示文本"></header>
+            <item datasource="buttonArr" text="name" ></item>
+        </pcombobox-normal>
+
+
+        <br />
+        <br />
+        <pcombobox-normal sel="itemClick">
+            <header  placeholder=" 先选择项目" prefix="项目："></header>
+            <item datasource="buttonArr" text="name"></item>
+        </pcombobox-normal>
+
+
+        <br />
+        <br />
+        prefix
+        <!-- 不带边框的下拉 -->
+        不带边框的下拉
+        <pcombobox-normal sel="itemClick" isborder="false">
+            <header  placeholder="头部提示文本"></header>
+            <item datasource="buttonArr" text="name"></item>
+        </pcombobox-normal>
+
+
+
+        <br />
+        <br />
+        自定义下拉
+        <pcombobox-custom sel="itemClick" templateid="xxxTemp">
+            <header  placeholder="头部提示文本"></header>
+            <item  ></item>
+        </pcombobox-custom>
+        <br />
+        <br />
+
+
+        多层级下拉
+
+        <pcombobox-normal id="StateDown" istree="true" sel="itemClick">
+<item datasource="workState" text="name" child="contents" pronametoissel="issel"></item>
+</pcombobox-normal>
+    </div>
+    <script type="text/html" id="xxxTemp">
+        <div style="height: 200px;"></div>
+
+
+    </script>
+</body>
+</html>

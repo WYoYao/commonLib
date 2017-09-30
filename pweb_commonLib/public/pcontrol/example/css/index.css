@@ -1,0 +1,289 @@
+/*
+*框架css
+*@Author：wangyangyang
+*Update:2015-09-24  17:40
+*/
+/*
+*框架css
+*@Author：wangyangyang
+*Update:2016-1-15  10:00
+*/
+/*公共样式*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, i, b {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+:focus {
+    outline: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+body {
+    line-height: 1;
+    color: #333333;
+    font-size: 14px;
+    background: #fcfcfc;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: "";
+}
+
+blockquote, q {
+    quotes: "" "";
+}
+
+* {
+    font-family: Arial,微软雅黑,Microsoft YaHei,SimHei,SimSun;
+    outline: 0px solid #FFF;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+/*#region 滚动条的样式开始 */
+
+body ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+body ::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0);
+    -webkit-border-radius: 3px;
+}
+
+body ::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 3px;
+    background: #e6e6e6;
+    border: 1px solid #e6e6e6;
+}
+
+
+
+    body ::-webkit-scrollbar-thumb:vertical:hover {
+        background: #e6e6e6;
+        border: 1px solid #e6e6e6;
+    }
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+/*table {table-layout:fixed;word-break:break-all;border-spacing: 0;border-collapse: collapse;}*/
+button, input, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+p, ul, li, span, em, i, img, h1, h2, h3, h4, h5, h6, dl, dt, dd, b {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font-style: normal;
+}
+
+i, b {
+    font-style: normal;
+    font-weight: normal;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+    display: block;
+}
+
+button[disabled], html input[disabled] {
+    cursor: default;
+}
+
+[hidden] {
+    display: none;
+}
+
+
+:after, :before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+/*字体库*/
+@font-face {
+    font-family: 'perficon';
+    src: url('../../../fontFace/perficon.eot'); /* IE9*/
+    src: url('../../../fontFace/perficon.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../../../fontFace/perficon.woff') format('woff'), /* chrome、firefox */
+    url('../../../fontFace/perficon.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('../../../fontFace/perficon.svg#uxfonteditor') format('svg'); /* iOS 4.1- */
+}
+
+.wrap {
+    width: 1280px;
+    margin: 0 auto;
+    height: 100%;
+    position: relative;
+}
+/*header部分*/
+#header {
+    width: 1280px;
+    height: 55px;
+    background: #384248;
+    position: fixed;
+    z-index: 9;
+    box-shadow: 1px 1px 7px rgba(0,0,0,0.3);
+}
+
+    #header h2 {
+        color: #34c9df;
+        float: left;
+        margin: 10px 0 0 24px;
+        font-size: 22px;
+        font-weight: normal;
+        font-family: Arial;
+    }
+
+    #header span {
+        float: left;
+        color: #34c9df;
+        position: absolute;
+        bottom: 6px;
+        left: 24px;
+        font-size: 10px;
+    }
+/*主体*/
+.content {
+    margin: 0 auto;
+    overflow: hidden;
+    padding-top: 55px;
+    background: #ebeff2;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+#navList {
+    width: 280px;
+    background: #272c32;
+    border: none;
+    float: left;
+    height: 100%;
+    top: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.navListBox h3 {
+    height: 51px;
+    line-height: 51px;
+    color: #7d8b99;
+    background: #2f363e;
+    font-weight: bold;
+    font-size: 16px;
+    border-bottom: 1px solid #353d45;
+    text-indent: 50px;
+    cursor: pointer;
+}
+
+    .navListBox h3.cur {
+        color: #fff;
+    }
+
+    .navListBox h3 span:before {
+        content: 'v';
+        font-family: "perficon";
+        display: inline-block;
+        float: right;
+        margin-right: 5px;
+    }
+
+    .navListBox h3.cur span:before {
+        content: '^';
+        font-family: "perficon";
+    }
+
+.navList {
+    display: none;
+}
+
+    .navList li {
+        line-height: 40px;
+        height: 40px;
+        color: #7d8b99;
+        cursor: pointer;
+        text-indent: 66px;
+        border-left: 6px solid transparent;
+            overflow: hidden;
+            white-space: nowrap;
+    }
+
+        .navList li:last-child {
+            border-bottom: none;
+        }
+
+        .navList li.cur {
+            background: #4b555e;
+            position: relative;
+            border-left: 6px solid #34c9df;
+            color: #fff;
+            box-sizing: border-box;
+        }
+
+#rightBox {
+    overflow: hidden;
+    position: absolute;
+    left: 281px;
+    top: 55px;
+    bottom: 0;
+    right: 0;
+    background: #fff;
+}
+
+    
+
+.temp_title h1 {
+}
+
+.temp_title p {
+}
+
+.navListDivTitle {
+    line-height: 40px;
+    height: 40px;
+    color: #E6E6E6;
+    padding-left: 44px;
+    border-top: 1px solid #404040;
+    border-bottom: 1px solid #404040;
+}

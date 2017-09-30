@@ -1,0 +1,128 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>grid</title>
+    <script type="text/javascript" src="http://192.168.100.196:9000/Scripts/lib/jquery-2.0.0.min.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/lib/vue-2.2.0.min.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/tool/pconst.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/Date.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/jQueryDom.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/String.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/Math.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/tool/ptool.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/tool/pajax.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/pcontrol/flatBlueSeries_src_2.0.js"></script>
+    <link rel="stylesheet" href="http://192.168.100.196:9000/pcontrol/css/flatBlueSeries_min_2.0.css" />
+
+
+    <style type="text/css">
+  
+    </style>
+    <script type="text/javascript">
+        var logger = {
+            init: function () {
+                new Vue({
+                    el: '#app',
+                    data: datamodal
+                })
+            }
+        }
+        function itemClick(obj) {
+            var index = obj.pEventAttr.index;
+            console.log(index)
+        }
+        var datamodal = {
+            xxx: 'test',
+            gridArr: [{ name: '小王1', age: '18', hobby: '唱歌' }
+                , { name: '小王2', age: '18', hobby: '唱歌' }
+                , { name: '小王3', age: '18', hobby: '唱歌' }
+                , { name: '小王4', age: '18', hobby: '唱歌' }
+                , { name: '小王5', age: '18', hobby: '唱歌' }
+                , { name: '小王6', age: '18', hobby: '唱歌' }
+                , { name: '小王7', age: '18', hobby: '唱歌' }
+                , { name: '小王8', age: '18', hobby: '唱歌' }
+                , { name: '小王9', age: '18', hobby: '唱歌' }
+                , { name: '小王10', age: '18', hobby: '唱歌' }
+                , { name: '小王1', age: '18', hobby: '唱歌' }
+                , { name: '小王2', age: '18', hobby: '唱歌' }
+                , { name: '小王3', age: '18', hobby: '唱歌' }
+                , { name: '小王4', age: '18', hobby: '唱歌' }
+                , { name: '小王5', age: '18', hobby: '唱歌' }
+                , { name: '小王6', age: '18', hobby: '唱歌' }
+                , { name: '小王7', age: '18', hobby: '唱歌' }
+                , { name: '小王8', age: '18', hobby: '唱歌' }
+                , { name: '小王9', age: '18', hobby: '唱歌' }
+                , { name: '小王10', age: '18', hobby: '唱歌' }
+                , { name: '小王1', age: '18', hobby: '唱歌' }
+                , { name: '小王2', age: '18', hobby: '唱歌' }
+                , { name: '小王3', age: '18', hobby: '唱歌' }
+                , { name: '小王4', age: '18', hobby: '唱歌' }
+                , { name: '小王5', age: '18', hobby: '唱歌' }
+                , { name: '小王6', age: '18', hobby: '唱歌' }
+                , { name: '小王7', age: '18', hobby: '唱歌' }
+                , { name: '小王8', age: '18', hobby: '唱歌' }
+                , { name: '小王9', age: '18', hobby: '唱歌' }
+                , { name: '小王10', age: '18', hobby: '唱歌' }
+                , { name: '小王1', age: '18', hobby: '唱歌' }
+                , { name: '小王2', age: '18', hobby: '唱歌' }
+                , { name: '小王3', age: '18', hobby: '唱歌' }
+                , { name: '小王4', age: '18', hobby: '唱歌' }
+                , { name: '小王5', age: '18', hobby: '唱歌' }
+                , { name: '小王6', age: '18', hobby: '唱歌' }
+                , { name: '小王7', age: '18', hobby: '唱歌' }
+                , { name: '小王8', age: '18', hobby: '唱歌' }
+                , { name: '小王9', age: '18', hobby: '唱歌' }
+                , { name: '小王10', age: '18', hobby: '唱歌' }
+            ],
+            buttonArr1: ['1号', '2号', '3号'],
+        }
+        $(function () {
+            logger.init();
+        })
+        function _console2() { };
+        function _console() {
+            console.log(111);
+        };
+    </script>
+</head>
+<body>
+    <div id="app">
+        <div style="margin: 30px;">
+            静态表格
+            <pgrid-normal style="width: 600px; height: 400px;">
+                <panel datasource="gridArr" lock="true" pagesize="10" sel="_console2" click="_console"></panel>
+                <header>
+                    <column name="姓名" source="name" click="_console"></column>
+                    <column name="年龄" source="age" click="_console"></column>
+                    <column name="爱好" source="hobby"></column>
+                </header>
+                <page>
+                    <ppage-simple number="50"></ppage-simple>
+                    <!--<ppage-full number="10"></ppage-full>-->
+                </page>
+            </pgrid-normal>
+            动态表格
+
+
+            <pgrid-multifunction style="width: 600px; height: 400px;" id="'grid1'">
+                <panel datasource="gridArr" pagesize="5" sel="_console2" checkbox="true" click="_console" change="_console"></panel>
+                <header>
+                    <column name="姓名" source="name" click="_console" sort="true" sortevent="_console2"></column>
+                    <column name="年龄" source="age"></column>
+                    <column name="爱好" source="hobby"></column>
+                </header>
+                <page>
+                    <ppage-simple number="10"></ppage-simple>
+                </page>
+                <button>
+                    <pbutton-blue text="点我啊" click="_console2"></pbutton-blue>
+                </button>
+            </pgrid-multifunction>
+
+
+
+        </div>
+    </div>
+</body>
+</html>

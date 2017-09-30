@@ -1,0 +1,43 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>开关</title>
+    <script type="text/javascript" src="http://192.168.100.196:9000/Scripts/lib/jquery-2.0.0.min.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/lib/vue-2.2.0.min.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/tool/pconst.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/Date.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/jQueryDom.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/String.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/Math.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/tool/ptool.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/pcontrol/flatBlueSeries_src_2.0.js"></script>
+    <link rel="stylesheet" href="http://192.168.100.196:9000/pcontrol/css/flatBlueSeries_min_2.0.css" />
+
+
+    <style type="text/css">
+  
+    </style>
+    <script type="text/javascript">
+        function eventCall() {
+            console.log('我被执行了');
+        }
+    </script>
+</head>
+<body>
+    <div style="padding: 20px; width: 300px">
+        <pswitch-checkbox text="我是复选" change="eventCall"></pswitch-checkbox>
+        <pswitch-checkbox text="我是复选" state="true" change="eventCall"></pswitch-checkbox>
+        <br />
+        <br />
+
+
+
+        <pswitch-radio text="我是单选" name="mask" change="eventCall"></pswitch-radio>
+        <pswitch-radio text="我是单选" state="true" name="mask" change="eventCall"></pswitch-radio>
+        <br />
+        <br />
+        <pswitch-slide change="eventCall"></pswitch-slide>
+    </div>
+</body>
+</html>

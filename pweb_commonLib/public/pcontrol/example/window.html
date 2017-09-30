@@ -1,0 +1,127 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>window</title>
+    <script type="text/javascript" src="http://192.168.100.196:9000/Scripts/lib/jquery-2.0.0.min.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/lib/vue-2.2.0.min.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/tool/pconst.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/Date.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/jQueryDom.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/String.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/extend/Math.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/scripts/tool/ptool.js"></script>
+    <script type="text/javascript" src="http://192.168.100.196:9000/pcontrol/flatBlueSeries_src_2.0.js"></script>
+
+    <link rel="stylesheet" href="http://192.168.100.196:9000/pcontrol/css/flatBlueSeries_min_2.0.css" />
+
+
+    <style type="text/css">
+  
+    </style>
+    <script type="text/javascript">
+        function globalshow() {
+            $("#globalWindow").pshow()
+        }
+
+
+        function modalshow() {
+            $("#modalWindow").pshow()
+        }
+        function modalhide() {
+            $("#modalWindow").phide()
+        }
+
+
+        function confirmshow() {
+            $("#confirmWindow").pshow({ title: '确定要删除吗', subtitle: '删除后不可恢复' })
+        }
+        function confirmhide() {
+            $("#confirmWindow").phide()
+        }
+
+
+
+        function floatShow() {
+            $("#floatWindow").pshow({title:'这是个标题'})
+        }
+        function floatHide() {
+            $("#floatWindow").phide()
+        }
+
+        function editFloat() {
+            $("#floatWindow").pshow({ title: '我把名字改了哈' })
+        }
+        function bubbleShow() {
+            $("#bubbleWindow").pshow()
+        }
+        function bubbleHide() {
+            $("#bubbleWindow").phide()
+        }
+
+
+    </script>
+</head>
+<body style="background: #f0f3f6">
+
+    <pbutton-white text="全屏弹窗" click="globalshow"></pbutton-white>
+    <pbutton-white text="modal弹窗" click="modalshow"></pbutton-white>
+    <pbutton-white text="confirm弹窗" click="confirmshow"></pbutton-white>
+    <pbutton-white text="float弹窗" click="floatShow"></pbutton-white>
+    <pbutton-white text="bubble弹窗" click="bubbleShow"></pbutton-white>
+
+
+    <div style="width: 600px; padding: 30px; height: 600px;">
+        <!-- global -->
+        <pwindow-global id="globalWindow" templateid="windowTemp"></pwindow-global>
+
+        <!-- modal -->
+        <pwindow-modal id="modalWindow" title="这是标题哈~" templateid="windowTemp1"></pwindow-modal>
+
+        <!-- confirm -->
+        <pwindow-confirm id="confirmWindow">
+            <button>
+                <pbutton-backred text="确定" click="confirmhide"></pbutton-backred>
+                <pbutton-white text="取消" click="confirmhide"></pbutton-white>
+            </button>
+        </pwindow-confirm>
+
+        <!-- float -->
+        <pwindow-float id="floatWindow" isshade="true" title="这是标题" templateid="floatTemp">
+            <button>
+                <pbutton-blue text="编辑" icon="e" click="editFloat"  isborder="false" id="ss"></pbutton-blue>
+                <pbutton-blue text="取消" icon="e" click="confirmhide"  isborder="false"  id="ds"></pbutton-blue>
+            </button>
+             <animate maxpx="0" minpx="-830"  orientation="right"> </animate>
+        </pwindow-float>
+
+        <!--bubble-->
+        <pwindow-bubble title='确定要删除吗' subtitle='删除后不可恢复' id="bubbleWindow">
+            <button> 
+                <pbutton-backred text="确定" click="bubbleHide"></pbutton-backred>
+                <pbutton-white text="取消" click="bubbleHide"></pbutton-white>
+            </button>
+        </pwindow-bubble>
+
+    </div>
+    <script type="text/html" id="floatTemp">
+        <div style="width: 600px; height: 500px;">
+            这个内容哈~
+        </div>
+    </script>
+    <script type="text/html" id="windowTemp">
+        <div style="width: 400px; height: 500px;">
+            这个内容哈~
+        </div>
+
+    </script>
+    <script type="text/html" id="windowTemp1">
+        <div style="width: 400px; height: 500px;">
+            这个内容哈~
+               <pbutton-white text=" 取消" click="modalhide"></pbutton-white>
+
+        </div>
+
+    </script>
+</body>
+</html>
