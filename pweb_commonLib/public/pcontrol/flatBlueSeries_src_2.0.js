@@ -6593,6 +6593,7 @@ ptime.prototype.psel = function (objParm, isEvent) {
                     index = val - 1;
                     break;
                 case this.calendarDefaultTimeTypeArr[4]:
+                case this.calendarDefaultTimeTypeArr[5]:
                     index = val;
                     break;
             }
